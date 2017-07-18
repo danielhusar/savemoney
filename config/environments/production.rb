@@ -1,11 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.middleware.insert_before(Rack::Sendfile, Rack::Rewrite) do
-    # Redirect apex-domain requests to the full domain
-    r301 %r{.*}, 'https://www.savemoney.io$&', if: Proc.new { |rack_env| ['www.savemoney.io', 'savemoney.io'].include?(rack_env['SERVER_NAME']) }
-  end
-
   # Code is not reloaded between requests.
   config.cache_classes = true
 
