@@ -18,9 +18,9 @@ body {
   font-family: $font;
   font-size: 16px;
   line-height: 1.6;
-  color: $black;
+  color: $white;
+  background: black;
   font-weight: 400;
-  background: white;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -55,9 +55,14 @@ a {
   margin-right: auto;
   position: relative;
   z-index: 2;
-  padding-left: $gutter / 2;
-  padding-right: $gutter / 2;
+  padding-left: $gutter;
+  padding-right: $gutter;
   max-width: $container + $gutter;
+
+  @media (max-width: 500px) {
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+  }
 }
 
 img[width="1"][height="1"] {

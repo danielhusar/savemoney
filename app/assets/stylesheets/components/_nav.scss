@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.nav__right {
+  margin-left: auto;
+  color: $grey;
+  font-size: 14px;
+}
