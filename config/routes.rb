@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   end if Rails.env.production?
 
   root to: "site#homepage"
-  get "/api/subscribe", to: "api#subscribe"
+  post "/api/subscribe", to: "api#subscribe"
 end

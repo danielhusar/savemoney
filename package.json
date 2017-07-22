@@ -9,7 +9,8 @@
     "browserify-incremental": "^3.0.1",
     "eslint": "3.14.0",
     "eslint-plugin-babel": "4.0.1",
-    "eslint-plugin-import-order": "2.1.4"
+    "eslint-plugin-import-order": "2.1.4",
+    "in-view": "^0.6.1"
   },
   "scripts": {
     "lint": "eslint --ext .es6 app/assets/javascripts"

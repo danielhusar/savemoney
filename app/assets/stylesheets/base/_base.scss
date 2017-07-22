@@ -17,7 +17,7 @@ html *:after{
 body {
   font-family: $font;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.4;
   color: $white;
   background: black;
   font-weight: 400;
@@ -30,15 +30,8 @@ body {
 }
 
 img,
+video,
 svg {
-  max-width: 100%;
-}
-
-.svg {
-  height: auto;
-}
-
-.video {
   max-width: 100%;
 }
 

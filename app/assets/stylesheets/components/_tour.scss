@@ -1,0 +1,27 @@
+.tour {
+  display: flex;
+  align-items: center;
+  margin: 0 -40px;
+}
+
+.tour__item {
+  width: 50%;
+  min-width: 50%;
+  padding: 0 40px;
+}
+
+.tour__switch {
+  order: 2;
+}
+
+.tour__h {
+  max-width: 400px;
+}
+
+.tour__desc {
+  max-width: 400px;
+}
+
+.tour__2 {
+  margin-top: -20%;
+}
