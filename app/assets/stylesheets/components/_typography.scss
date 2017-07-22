@@ -14,3 +14,13 @@
 .t__smaller {
   font-size: 14px;
 }
+
+@media (max-with: $mobile) {
+  .t__h1 {
+    font-size: 32px;
+  }
+
+  .t__h3 {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,89 @@
+.cta {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  max-width: 100%;
+  min-height: 48px;
+}
+
+.cta__email {
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  height: 48px;
+  width: 100%;
+  outline: none;
+  padding: 8px 44px 8px 17px;
+  background: none;
+  font-size: 16px;
+  text-align: left;
+  color: white;
+}
+
+.cta__email.error {
+  border-color: #f93232;
+}
+
+.cta__submit {
+  position: absolute;
+  top: 50%;
+  margin-top: -7px;
+  right: 20px;
+  transform: rotate(45deg);
+  z-index: 3;
+  width: 14px;
+  height: 14px;
+  border: none;
+  background: none;
+  outline: none;
+  color: rgba(0, 0, 0, 0);
+  border-top: 1px solid #525252;
+  border-right: 1px solid #525252;
+  cursor: pointer;
+  transition: all .3s linear;
+}
+
+.cta__submit:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 17px;
+  height: 1px;
+  border-top: 1px solid #525252;
+  top: 0;
+  right: 0;
+  transform-origin: center right;
+  transform: rotate(-45deg);
+  transition: all .3s linear;
+}
+
+.cta__submit.loading {
+  border-radius: 50%;
+  border-width: 2px;
+  animation: rotate 2s linear infinite;
+}
+
+.cta__submit.loading:before {
+  opacity: 0;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+.cta__success {
+  display: none;
+}
+
+.cta.success .cta__success {
+  display: block;
+}
+
+.cta.success .cta__inputs {
+  display: none;
+}

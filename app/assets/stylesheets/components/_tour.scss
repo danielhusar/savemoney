@@ -25,3 +25,34 @@
 .tour__2 {
   margin-top: -23.4%;
 }
+
+@media (max-width: 700px) {
+  .tour {
+    display: block;
+    text-align: center;
+    margin: 0;
+  }
+
+  .tour__item {
+    padding: 0;
+    width: 100px;
+    min-width: 100%;
+  }
+
+  .tour__h {
+    margin-top: 40px;
+  }
+
+  .tour__h ,
+  .tour__desc {
+    max-width: none;
+  }
+
+  .tour__2 {
+    margin-top: 20px;
+  }
+
+  .tour__spacing {
+    display: none;
+  }
+}

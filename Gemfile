@@ -14,6 +14,7 @@ gem "autoprefixer-rails", "~> 6.4"
 gem "jquery-rails", "~> 4.0"
 gem "rake"
 gem "rack-attack"
+gem "gibbon"
 
 group :development, :test do
   gem "rspec-rails"
