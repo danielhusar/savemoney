@@ -1,17 +1,47 @@
 import inView from '../lib/in-view'
 
 const inViewInstance = inView()
-const $items = $('[data-color]')
+inViewInstance.threshold(.3)
 
-inViewInstance.offset(100)
-inViewInstance.threshold(1)
+let transition = false
+let previousScroll = 0
 
-$items.each(function() {
-  const $item = $(this)
-  const color = $item.data('color')
+const isVisible = (el) => {
+  const elemTop = el.getBoundingClientRect().top
+  const elemBottom = el.getBoundingClientRect().bottom
+  const isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight)
+  return isVisible
+}
 
-  inViewInstance(`[data-color="${color}"]`).on('enter', el => {
-    $items.css('color', '')
-    $(el).css('color', color)
+const setColor = (el, direction) => {
+  let $active = $('[style]', el)[direction]()
+  if (!$active.length || transition || !isVisible($active[0])) { return }
+
+  transition = true
+  window.setTimeout(() => {
+    $('[data-color]').removeAttr('style')
+    $active.css('color', $active.data('color'))
+    transition = false
+  }, 200)
+}
+
+inViewInstance('[data-features]').on('enter', el => {
+  $(window).off('scroll.feature').on('scroll.feature', function() {
+    const currentScroll = $(this).scrollTop()
+    if (currentScroll > previousScroll){
+      setColor(el, 'next')
+    } else {
+      setColor(el, 'prev')
+    }
+    previousScroll = currentScroll
   })
-});
+})
+
+inViewInstance('[data-features]').on('exit', () => {
+  $(window).off('scroll.feature')
+  window.setTimeout(() => {
+    $('[data-color]').removeAttr('style')
+    const $first = $('[data-color]').first()
+    $first.css('color', $first.data('color'))
+  }, 500)
+})
