@@ -1,0 +1,21 @@
+.footer__flex {
+  display: flex;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer__right {
+  margin-left: auto;
+}
+
+.footer__dot {
+  padding: 0 7px;
+  font-weight: bold;
+}
