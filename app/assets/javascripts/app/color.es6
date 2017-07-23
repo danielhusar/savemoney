@@ -3,8 +3,8 @@ import inView from '../lib/in-view'
 const inViewInstance = inView()
 inViewInstance.threshold(.3)
 
-let transition = false
 let previousScroll = 0
+let lastPos = 0
 
 const isVisible = (el) => {
   const elemTop = el.getBoundingClientRect().top
@@ -15,14 +15,12 @@ const isVisible = (el) => {
 
 const setColor = (el, direction) => {
   let $active = $('[style]', el)[direction]()
-  if (!$active.length || transition || !isVisible($active[0])) { return }
+  let delta = Math.abs(window.scrollY - lastPos)
+  if (!$active.length || delta < 70 || !isVisible($active[0])) { return }
 
-  transition = true
-  window.setTimeout(() => {
-    $('[data-color]').removeAttr('style')
-    $active.css('color', $active.data('color'))
-    transition = false
-  }, 200)
+  lastPos = window.scrollY
+  $('[data-color]').removeAttr('style')
+  $active.css('color', $active.data('color'))
 }
 
 inViewInstance('[data-features]').on('enter', el => {
@@ -43,5 +41,5 @@ inViewInstance('[data-features]').on('exit', () => {
     $('[data-color]').removeAttr('style')
     const $first = $('[data-color]').first()
     $first.css('color', $first.data('color'))
-  }, 500)
+  }, 300)
 })
