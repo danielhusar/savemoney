@@ -3,3 +3,4 @@
 require('app/video.es6');
 require('app/cta.es6');
 require('app/color.es6');
+require('app/body.es6');

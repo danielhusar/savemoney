@@ -1,3 +1,11 @@
 .section {
   padding: 30px 0;
+  opacity: 0;
+  transform: translate(0, 30px);
+  transition: opacity .2s, transform .4s;
+
+  .body__loaded & {
+    opacity: 1;
+     transform: translate(0, 0);
+  }
 }

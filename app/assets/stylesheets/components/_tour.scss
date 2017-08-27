@@ -26,6 +26,12 @@
   margin-top: -23.4%;
 }
 
+@media (min-width: 1000px) {
+  .tour__item__push {
+    margin-top: 120px;
+  }
+}
+
 @media (max-width: 700px) {
   .tour {
     display: block;
