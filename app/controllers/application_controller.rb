@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
   before_action :set_defaults
 
   private def set_defaults
-    @title = "Save"
-    @description = "Save"
-    @keywords = "save"
+    @title = "Save Budget — Your money in Color"
+    @description = "Plan, track, and manage your budget like never before."
+    @keywords = "Save, Money, Budget, App, Finance"
     @social_image = nil
   end
 end
